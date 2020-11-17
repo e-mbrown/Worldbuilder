@@ -1,0 +1,35 @@
+Inspirational sites/apps
+OneNote(main organization) => 
+Mindmap(writing type? OR organizational type(can be swapped with index cards?)) 
+=> Celtx?(writing types) => 
+ToyHouse(organization)
+
+
+User Story
+User will sign in and get to a homepage it will default to a quick note tab and show the different options (Universe's => Worldbuilding(Brain-storming note or mindmap) =>Stories(Plotting, writing= scripts(maybe), novel), Character books(sheets))
+
+Each tab could have an overview, take images and links and stuff
+
+Let canvas be changed based on common sizes[A4, A2 etc]. Use google fonts or pc fonts?
+
+Test users get a limit of two books and 5 entries for the test phase(MVP)
+
+Try Aws again 0u0 better use actually good security if possible
+
+Design(https://toyhou.se/badturquoise, https://www.mindmaps.app/, https://wwwz.celtx.com/a/ux/index#documents)
+
+Trash capabilities:
+
+MVP Backend
+    Users(Has storage for projects) as well as permissions
+        Permissions  take the form of owner or collaborator(can't delete, can edit, can comment)
+    Projects have a status of active or archived, they have a title, they have a text container(world) connected to it
+    The text container has a type of novel or screenplay(determines name of text blocks), it has the mindmap, index cards, main text files(chapters or episodes)and character catalog
+    Text blocks hold the actual meat of the story(the name title)
+    the character catalog is a group of characters and takes from a character list(this list has all their information) 
+
+    Mindmap/notecard items
+    Templates for novels vs scripts?
+    Word processor stuff
+
+Might need to use blobs on the frontend ()[https://developer.mozilla.org/en-US/docs/Web/API/Blob#Blob_constructor_example_usage]
