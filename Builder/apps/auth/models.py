@@ -42,7 +42,7 @@ class UserManager(BaseUserManager):
 
 class User(AbstractBaseUser, PermissionsMixin):
     """
-    AbstractBAseUser has the required fields option as well others such as the password, is active, and last login  
+    AbstractBaseUser has the required fields option as well others such as the password, is active, and last login  
 
     Permission Mixin has the superuser field and permissions functions
     """
@@ -65,7 +65,7 @@ class User(AbstractBaseUser, PermissionsMixin):
     def token(self):
         return self._genetate_jwt_token()
 
-    def _genetate_jwt_token(self):
+    def _generate_jwt_token(self):
         payload = jwt_payload_handler(self)
         token = jwt_encode_handler(payload)
 

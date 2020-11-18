@@ -1,24 +1,34 @@
-from django.db import models
+from django.db import models, forms
 
 # Create your models here.
 
 class Project(models.Model):
     name = models.CharField(max_length=100, default=None)
-    creator = models.ForeignKey(User, on_delete= models.CASCADE)
-    co-owner = models.ManyToManyField(User, on_delete=models.CASCADE)
-    world = models.ForeignKey(World)
+    creator = models.ForeignKey('apps.auth.User', on_delete= models.CASCADE)
+    co-owner = models.ManyToManyField('apps.auth.User', on_delete=models.CASCADE, blank=True, null=True)
+    container = models.ForeignKey(World, blank=True, null=True)
+    is_active = models.BooleanField(default=True)
 
-class World(models.Model):
-    name = models.CharField()
-    characters
+class Container(models.Model):
+    kind = models.CharField(max_length=255, default='Untitled')
+    maps = model.ForeignKey(Map, blank=True, null=True)
+    c-note = model.ForeignKey(Note, blank=True, null=True)
+    catalog = model.ForeignKey(Catalog, blank=True, null=True)
+    texts = model.ForeignKey(Text, blank=True, null=True)
     
 
-class Novel(models.Model):
-    owner = models.ForeignKey(Container)
-    chapter = models
-        n-card = models.CharField()
+class Text(form.Forms):
+    body = models.FileField(blank=True, null=True)
+    comments = models.CharField(max_length=255, blank=True, null=True)
 
-class Chapter(models.Model)
-    name = models.CharField()
-    txt = models.TextField()
+class Catalog(models.Model):
+    characters = models.ForeignKey(Character, blank=True, null=True)
+
+class Character(form.Forms):
+    name = models.CharField(max_length=255)
+    age = models.IntegerField()
+    hometown = models.CharField(max_length=255)
+    other = models.FileField()
+
+
 
